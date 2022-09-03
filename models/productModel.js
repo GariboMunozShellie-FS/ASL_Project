@@ -1,4 +1,6 @@
-let product = []
+let products = [
+    {id: '1', color: 'blue', item: 'headphones'}
+]
 
 const all = () => {
     return products
