@@ -1,22 +1,11 @@
+
 const express = require('express')
 const app = express()
+const bodyParser = require('body-parser')
+const productRouter = require('./routes/productsRoute')
 
-// GET / HTTP/1.1
+app.use(bodyParser.urlencoded({extended: false}))
 
-app.get('/products/all', (req, res) => {
-    res.send('page: ' + '2' + 
-    ' sort: ' + 'prize' +
-    ' order: ' + 'desc')
-})
-
-app.get('/products/:id-:size-:color', (req, res) => {
-    res.send('id: ' + req.params.id + 
-    ' size: ' + req.params.size +
-    ' color: ' + req.params.color)
-})
-
-app.get('/products/:id', (req, res) => {
-    res.send('id: ' + req.params.id )
-})
+app.use("/products", productRouter)
 
 app.listen(3000)
