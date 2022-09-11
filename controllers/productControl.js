@@ -38,7 +38,8 @@ const update = (req, res) => {
 
 const remove = (req, res) => {
     const productItem = Products.remove(req.params.id)
-    //res.json(productItem)
+    res.render('views/products/delete')
+    res.redirect('/products/')
 }
 
 

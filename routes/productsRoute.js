@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const productCtrl = require('../controllers/productControl')
 
+
 router.get('/', productCtrl.index)
 router.get('/new', productCtrl.form)
 router.get('/:id', productCtrl.show)
