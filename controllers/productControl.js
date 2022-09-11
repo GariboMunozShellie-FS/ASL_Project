@@ -26,12 +26,14 @@ const form = (req, res) => {
 
 const create = (req, res) => {
     const productItem = Products.create(req.body)
-    res.json(productItem)
+    res.redirect('/products/' + productItem.id)
+    //res.json(productItem)
 }
 
 const update = (req, res) => {
     const productItem = Products.update(req.params.id, req.body)
-    res.json(productItem)
+    res.redirect('/products/' + req.params.id)
+    //res.json(productItem)
 }
 
 const remove = (req, res) => {
