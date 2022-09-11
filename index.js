@@ -9,7 +9,7 @@ app.set('views', __dirname + '/templates/views')
 app.set('view engine', 'twig')
 
 app.get('/', (req, res) => {
-    res.render("home", {name: 'world', 'user': [
+    res.render("home", {name: 'world', 'users': [
         { name: 'Shellie Munoz', email: 'srgaribomunoz@student.fullsail.edu' },
         { name: 'Amara Montes', email: 'agmontes@student.fullsail.edu' },
         { name: 'Jose Lobato', email: 'jlobato@student.fullsail.edu' }
