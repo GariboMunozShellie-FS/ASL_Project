@@ -1,5 +1,6 @@
 let products = [
-    {id: '1', item: 'headphones' , price: '9.99'}
+    {id: '1', item: 'headphones' , price: '9.99'},
+    {id: '6', item: 'hat' , price: '1'}
 ]
 
 const all = () => {

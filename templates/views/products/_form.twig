@@ -1,10 +1,11 @@
 <form method="POST" action="/products/{% if productItem.id %}{{ productItem.id }}{% endif %}">
+    <a href="/products">View Products</a>
     {% if productItem.id %}
         <input type="hidden" name="id" value="{{ productItem.id }}" />
     {% endif %}
     <div>
         <label for="name">Name:</label>
-        <input type="text" name="name" id="name" value="{{ productItem.name }}" />
+        <input type="text" name="item" id="item" value="{{ productItem.item }}" />
         </br>
         <label for="name">Price:</label>
         <input type="number" name="price" id="price" value="{{ productItem.price }}" />
