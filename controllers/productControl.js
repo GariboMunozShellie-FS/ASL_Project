@@ -26,8 +26,8 @@ const form = (req, res) => {
 
 const create = (req, res) => {
     const productItem = Products.create(req.body)
-    //res.redirect('/products/' + productItem.id)
-    res.json(productItem)
+    res.redirect('/products/' + productItem.id)
+    //res.json(productItem)
 }
 
 const update = (req, res) => {
