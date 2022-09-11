@@ -38,7 +38,7 @@ const update = (req, res) => {
 
 const remove = (req, res) => {
     const productItem = Products.remove(req.params.id)
-    res.json(productItem)
+    //res.json(productItem)
 }
 
 
