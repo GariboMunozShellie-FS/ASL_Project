@@ -1,6 +1,6 @@
 'use strict';
 
-const { defaultValueSchemable } = require("sequelize/types/utils");
+//const { defaultValueSchemable } = require("sequelize/types/utils");
 
 module.exports = {
   async up (queryInterface, Sequelize) {
@@ -10,7 +10,7 @@ module.exports = {
      * Example:
      * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
      */
-    await queryInterface.changeColumn('Produce', 'price', {
+    await queryInterface.changeColumn('Products', 'price', {
       type: Sequelize.FLOAT,
       defaultValue: 0.00,
       allowNull: false
@@ -24,7 +24,7 @@ module.exports = {
      * Example:
      * await queryInterface.dropTable('users');
      */
-    await queryInterface.changeColumn('Produce', 'price', {
+    await queryInterface.changeColumn('Products', 'price', {
       type: Sequelize.INTEGER,
       defaultValue: 0,
       allowNull: false

@@ -1,0 +1,34 @@
+{% extends 'layouts/base.twig' %}
+
+{% block main_content %}
+    <h1>About {{ variantItem.item}}</h1>
+    <ul>
+        <li>
+            <label> Id: </label> {{ variantItem.id }}
+        </li>
+        <li>
+            <label> Name: </label> {{ variantItem.item }}
+        </li>
+        <li>
+            <label> Slug: $</label> {{ variantItem.slug }}
+        </li>
+        <li>
+            <label> Description: $</label> {{ variantItem.description }}
+        </li>
+        <li>
+            <label> Price: $</label> {{ variantItem.price }}
+        </li>
+        <li>
+            <label> Inventory: $</label> {{ variantItem.inventory }}
+        </li>
+        <li>
+            <label> Product:</label> {{ productItem.item }}
+        </li>
+    </ul>
+    <p>
+        <a href="/variants/{{ variantItem.id }}/edit">Edit</a> |
+        <a href="/variants/{{ variantItem.id }}/delete">Delete</a> |
+        <a href="/variants">View Variants</a>
+    </p>
+
+{% endblock %}

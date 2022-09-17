@@ -1,10 +1,9 @@
-<h1> Hello {{ name }}</h1>
+<h1> Manage</h1>
 
-<ul>
-    {% for user in users %}
-        <li>
-            {{user.name}} |
-            {{user.email}}
-        </li>
-    {% endfor %}
-</ul>
+<nav>
+    <ul>
+        <li> <a href="/products"> Products </a> </li>
+        <li> <a href="/variants"> Variants </a></li>
+        <li> <a href="/images"> Images </a></li>
+    </ul>
+</nav>

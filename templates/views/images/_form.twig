@@ -1,0 +1,17 @@
+<form method="POST" action="/images/{% if imageItem.id %}{{ imageItem.id }}{% endif %}">
+    <a href="/images">View Images</a>
+    {% if imageItem.id %}
+        <input type="hidden" name="id" value="{{ imageItem.id }}" />
+    {% endif %}
+    <div>
+        <label>Variant:</label>
+        <select name="variantId">
+            {% for variants in variantItem %}
+                <option value="{{ variants.id }}"> {{ variants.item }} </option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <input type="submit" value="Submit" />
+    </div>
+</form>
