@@ -7,8 +7,17 @@
         <label for="name">Name:</label>
         <input type="text" name="item" id="item" value="{{ productItem.item }}" />
         </br>
+        <label for="name">Slug:</label>
+        <input type="text" name="slug" id="slug" value="{{ productExtra.slug }}" />
+        </br>
+        <label for="name">Description:</label>
+        <input type="text" name="description" id="description" value="{{ productExtra.description }}" />
+        </br>
         <label for="name">Price:</label>
         <input type="number" name="price" id="price" value="{{ productItem.price }}" />
+        </br>
+        <label for="name">Published:</label>
+        <input type="checkbox" name="is_published" id="is_published" value="{{ productExtra.is_published }}" />
     </div>
     <div>
         <input type="submit" value="Submit" />

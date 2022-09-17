@@ -10,7 +10,16 @@
             <label> Name: </label> {{ productItem.item }}
         </li>
         <li>
+            <label> Slug:</label> {{ productExtra.slug }}
+        </li>
+        <li>
+            <label> Description:</label> {{ productExtra.description }}
+        </li>
+        <li>
             <label> Price: $</label> {{ productItem.price }}
+        </li>
+        <li>
+            <label> Published:</label> {{ productExtra.is_published }}
         </li>
     </ul>
     <p>
