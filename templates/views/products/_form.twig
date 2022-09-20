@@ -17,7 +17,7 @@
         <input type="number" name="price" id="price" value="{{ productItem.price }}" />
         </br>
         <label for="name">Published:</label>
-        <input type="checkbox" name="is_published" id="is_published" value="{{ productItem.is_published }}" />
+        <input type="checkbox" name="is_published" id="is_published" value="1" {% if productItem.is_published %}checked{% endif %} />
     </div>
     <div>
         <input type="submit" value="Submit" />

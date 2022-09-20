@@ -32,7 +32,8 @@ const create = async (req, res) => {
 }
 
 const update = async (req, res) => {
-    const productItem = await Product.update(req.body, {
+    const is_published = req.body.is_published ? true : false
+    const productItem = await Product.update({...req.body, is_published}, {
         where: { id: req.params.id }
     })
     res.redirect('/products/' + req.params.id)
