@@ -26,19 +26,24 @@ const form = async (req, res) => {
     }
 }
 
-const create = async (req, res) => {
-    const imageItem =  await Image.create(req.body)
-    res.redirect('/images/' + imageItem.id)
-    //res.json(imageItem)
-    //console.log(imageItem);
+const create = async (req, res, next) => {
+  const imageItem = await Image.create(req.body)
+  // Sets a pretext "imageId" for our upload middleware
+  req.imageId = imageItem.id
+  // Invoke our upload middleware with next()
+  next()
+  res.redirect('/images/' + imageItem.id)
 }
 
-const update = async (req, res) => {
-    const imageItem = await Image.update(req.body, {
-        where: { id: req.params.id }
-    })
-    res.redirect('/images/' + req.params.id)
-    //res.json(imageItem)
+const update = async (req, res, next) => {
+  const imageItem = await Image.update(req.body, {
+    where: { id: req.params.id }
+  })
+  // Sets a pretext "imageId" for our upload middleware
+  req.imageId = req.params.id
+  // Invoke our upload middleware with next()
+  next()
+  res.redirect('/images/' + req.params.id)
 }
 
 const remove = async (req, res) => {

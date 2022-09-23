@@ -1,11 +1,16 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
+
+const fileUpload = require('express-fileupload')
+
 const productRouter = require('./routes/productsRoute')
 const variantRouter = require('./routes/variantsRoute')
 const imageRouter = require('./routes/imagesRoute')
 
 app.use(bodyParser.urlencoded({extended: false}))
+
+app.use(fileUpload())
 
 app.set('views', __dirname + '/templates')
 app.set('view engine', 'twig')
