@@ -1,9 +1,20 @@
-<h1> Manage</h1>
+{% extends 'layouts/base.twig' %}
 
-<nav>
-    <ul>
-        <li> <a href="/products"> Products </a> </li>
-        <li> <a href="/variants"> Variants </a></li>
-        <li> <a href="/images"> Images </a></li>
-    </ul>
-</nav>
+{% block title %}All Products{% endblock %}
+
+
+{% block main_content %}
+	<main class="container">
+        {% for products in productItem %}
+            <h3 ><a href="/shop/products/{{ products.slug }}"> {{ products.item }} </a></h3>
+            {% for variant in products.Variants %}
+				{% for image in variant.Images %}
+					<img  src="/public/images/{{ image.id }}{{ image.extension }}">
+				{% endfor %}		
+		{% endfor %}
+            ${{ products.price }}
+                <button>Add to cart</button>
+                <button>Checkout Now</button>
+        {% endfor %}
+    </main>
+{% endblock %}
